@@ -1,6 +1,6 @@
 # Developer Features on OpenShift 4
 
-## Enable Disable connectivity across projects
+## How to enable/disable connectivity across projects(project namespaces) in an OpenShift 4 cluster
 
 ### Prerequisites
 
