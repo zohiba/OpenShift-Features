@@ -1,8 +1,8 @@
 
 By default, the OpenShift Container Platform registry is secured during cluster installation so that it serves traffic through TLS. Unlike previous versions of OpenShift Container Platform, the registry is not exposed outside of the cluster at the time of installation.
 
-1. Log into the installer node of the cluster (ssh sysadmin@<installerIP>)
-2. Log into the master node from installer node (ssh core@<masterrIP>)
+1. Log into the installer node of the cluster (ssh sysadmin@installerIP)
+2. Log into the master node from installer node (ssh core@masterrIP)
 3. Log into the openshift cluster ( oc login https://api.srd.ocp.csplab.local:6443 -u ```<user>``` -p ```<password>```)
 4. Run ```oc get nodes``` to make sure everything is running fine
 5. To expose the registry using DefaultRoute:
@@ -34,3 +34,7 @@ By default, the OpenShift Container Platform registry is secured during cluster 
       
     If we do ```podman logout $HOST``` and try to repeat step 6, it should fail with ```unauthorized: authentication required``` error
  
+ 
+ Reference: 
+ https://docs.openshift.com/container-platform/4.3/registry/securing-exposing-registry.html
+ https://docs.openshift.com/container-platform/4.3/registry/accessing-the-registry.html
