@@ -30,6 +30,6 @@ By default, the OpenShift Container Platform registry is secured during cluster 
       
       ```podman tag image-name-that-we-want-to-push $HOST/project-name/image-name```
       
-      ```podman push $HOST/project-name/image-name```
+      ```podman push $HOST/project-name/image-name --tls-verify=false```
       
  
