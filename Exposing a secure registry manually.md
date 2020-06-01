@@ -32,4 +32,5 @@ By default, the OpenShift Container Platform registry is secured during cluster 
       
       ```podman push $HOST/project-name/image-name --tls-verify=false```
       
+    If we do ```podman logout $HOST``` and try to repeat step 6, it should fail with ```unauthorized: authentication required``` error
  
