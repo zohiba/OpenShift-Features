@@ -76,17 +76,17 @@
          
        ```htpasswd -c -B -b </path/to/users.htpasswd> <user_name> <password>```
   
-    2. Continue to add or update credentials to the file:
+   2. Continue to add or update credentials to the file:
 
       ```htpasswd -B -b </path/to/users.htpasswd> <user_name> <password>```
 
-    3. To use the HTPasswd identity provider, you must define a secret that contains the HTPasswd user file.
+   3. To use the HTPasswd identity provider, you must define a secret that contains the HTPasswd user file.
 
        Create an OpenShift Container Platform Secret that contains the HTPasswd users file.
 
        ```oc create secret generic htpass-secret --from-file=htpasswd=</path/to/users.htpasswd> -n openshift-config```
        
-    4. Configuring identity providers using the web console
+   4. Configuring identity providers using the web console
       
         - Configure your identity provider (IDP) through the web console instead of the CLI.
 
