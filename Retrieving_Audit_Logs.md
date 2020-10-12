@@ -4,18 +4,19 @@
 
 <details> 
   <summary> OCP API Logs </summary> 
+  
 
-  To see all the log files for all the nodes:
+   To see all the log files for all the nodes:
 
-  ```oc adm node-logs --role=master --path=openshift-apiserver/```
+      ```oc adm node-logs --role=master --path=openshift-apiserver/```
 
-  To see all the log files for specific node:
+   To see all the log files for specific node:
 
-  ```oc adm node-logs <master-0> --path=openshift-apiserver/```
+      ```oc adm node-logs <master-0> --path=openshift-apiserver/```
 
-  To see specifc log file associated with a node:
+   To see specifc log file associated with a node:
 
-  ```oc adm node-logs <master-0> --path=openshift-apiserver/audit.log```
+      ```oc adm node-logs <master-0> --path=openshift-apiserver/audit.log```
 
 </details>
 
@@ -24,17 +25,17 @@
 <details> 
   <summary> Kubernetes API Logs </summary> 
 
-  To see all the log files for all the nodes:
+   To see all the log files for all the nodes:
 
-  ```oc adm node-logs --role=master --path=kube-apiserver/```
+      ```oc adm node-logs --role=master --path=kube-apiserver/```
 
-  To see all the log files for specific node:
+   To see all the log files for specific node:
 
-  ```oc adm node-logs <master-0> --path=kube-apiserver/```
+      ```oc adm node-logs <master-0> --path=kube-apiserver/```
 
-  To see specifc log file associated with a node:
+   To see specifc log file associated with a node:
 
-  ```oc adm node-logs <master-0> --path=kube-apiserver/audit.log```
+      ```oc adm node-logs <master-0> --path=kube-apiserver/audit.log```
 
 </details>
 
@@ -70,21 +71,32 @@
 <details> 
   <summary> Set up New User </summary> 
   
-  1. Create or update your flat file with a user name and hashed password:
   
-  ```htpasswd -c -B -b </path/to/users.htpasswd> <user_name> <password>```
+    1. Create or update your flat file with a user name and hashed password:
+         
+       ```htpasswd -c -B -b </path/to/users.htpasswd> <user_name> <password>```
   
-  2. Continue to add or update credentials to the file:
-  
-  ```htpasswd -B -b </path/to/users.htpasswd> <user_name> <password>```
-  
-  3. To use the HTPasswd identity provider, you must define a secret that contains the HTPasswd user file.
+    2. Continue to add or update credentials to the file:
 
-     Create an OpenShift Container Platform Secret that contains the HTPasswd users file.
+      ```htpasswd -B -b </path/to/users.htpasswd> <user_name> <password>```
+
+    3. To use the HTPasswd identity provider, you must define a secret that contains the HTPasswd user file.
+
+       Create an OpenShift Container Platform Secret that contains the HTPasswd users file.
+
+       ```oc create secret generic htpass-secret --from-file=htpasswd=</path/to/users.htpasswd> -n openshift-config```
+    4. Configuring identity providers using the web console
       
-     ```oc create secret generic htpass-secret --from-file=htpasswd=</path/to/users.htpasswd> -n openshift-config```
-     
+        - Configure your identity provider (IDP) through the web console instead of the CLI.
 
+        Prerequisites
+        You must be logged in to the web console as a cluster administrator.
+        
+       a. Navigate to Administration → Cluster Settings.
+
+       b. Under the Global Configuration tab, click OAuth.
+
+       c. Under the Identity Providers section, select your identity provider from the Add drop-down menu.
   
 </details>
 
