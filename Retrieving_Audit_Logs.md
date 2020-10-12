@@ -101,3 +101,9 @@
   
 </details>
 
+
+Resources:
+https://docs.openshift.com/container-platform/4.5/authentication/identity_providers/configuring-htpasswd-identity-provider.html
+https://docs.openshift.com/container-platform/4.5/authentication/identity_providers/configuring-ldap-identity-provider.html
+https://docs.openshift.com/container-platform/4.5/nodes/nodes/nodes-nodes-audit-log.html
+
