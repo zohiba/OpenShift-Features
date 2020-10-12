@@ -72,7 +72,7 @@
   <summary> Set up New User </summary> 
   
   
-    1. Create or update your flat file with a user name and hashed password:
+   1. Create or update your flat file with a user name and hashed password:
          
        ```htpasswd -c -B -b </path/to/users.htpasswd> <user_name> <password>```
   
@@ -85,6 +85,7 @@
        Create an OpenShift Container Platform Secret that contains the HTPasswd users file.
 
        ```oc create secret generic htpass-secret --from-file=htpasswd=</path/to/users.htpasswd> -n openshift-config```
+       
     4. Configuring identity providers using the web console
       
         - Configure your identity provider (IDP) through the web console instead of the CLI.
