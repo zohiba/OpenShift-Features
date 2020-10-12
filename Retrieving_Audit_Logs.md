@@ -2,6 +2,9 @@
 
 ### View the OpenShift Container Platform API server logs
 
+<details> 
+  <summary> OCP API Logs </summary> 
+
 To see all the log files for all the nodes:
 
 ```oc adm node-logs --role=master --path=openshift-apiserver/```
@@ -14,7 +17,12 @@ To see specifc log file associated with a node:
 
 ```oc adm node-logs <master-0> --path=openshift-apiserver/audit.log```
 
+</details>
+
 ### View the Kubernetes API server logs
+
+<details> 
+  <summary> Kubernetes API Logs </summary> 
 
 To see all the log files for all the nodes:
 
@@ -28,6 +36,7 @@ To see specifc log file associated with a node:
 
 ```oc adm node-logs <master-0> --path=kube-apiserver/audit.log```
 
+</details>
 
 ### View username, useraction in auditlogs
 
