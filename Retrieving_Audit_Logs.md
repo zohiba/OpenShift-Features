@@ -67,6 +67,11 @@
   
   ``` oc adm node-logs <master-2> --path=kube-apiserver/audit.log | grep <project_name> | grep <deployment_name> | grep deployments | grep scale```
 
+- You can also delete the project from the console for example and repeat above steps to verify the user who deleted the project 
+
+  ```oc adm node-logs <master-#> --path=kube-apiserver/audit.log | grep <project_name> |  grep project | grep delete```
+
+
 ### Set up user account using htpasswd
 <details> 
   <summary> Set up New User </summary> 
