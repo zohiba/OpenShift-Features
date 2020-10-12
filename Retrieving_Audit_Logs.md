@@ -67,14 +67,16 @@
   
   ``` oc adm node-logs <master-2> --path=kube-apiserver/audit.log | grep <project_name> | grep <deployment_name> | grep deployments | grep scale```
 
-<details> 
-  <summary> Expected Output </summary> 
+  <details> 
+    <summary> Expected Output </summary> 
 
-```
-cpat@privatevnetbastion:~$ oc adm node-logs jcicost-shr2d-master-1 --path=kube-apiserver/audit.log | grep htlogs  | grep scale
-{"kind":"Event","apiVersion":"audit.k8s.io/v1","level":"Metadata","auditID":"b603178c-ecbf-4fc4-a9a6-126d2dd9e6c1","stage":"ResponseComplete","requestURI":"/apis/apps/v1/namespaces/htlogs/deployments/htlogsdeployment/scale","verb":"patch","user":{"username":"kube:admin","groups":["system:cluster-admins","system:authenticated"],"extra":{"scopes.authorization.openshift.io":["user:full"]}},"sourceIPs":["172.20.219.4"],"userAgent":"oc/openshift (linux/amd64) kubernetes/b66f2d3","objectRef":{"resource":"deployments","namespace":"htlogs","name":"htlogsdeployment","apiGroup":"apps","apiVersion":"v1","subresource":"scale"},"responseStatus":{"metadata":{},"code":200},"requestReceivedTimestamp":"2020-10-12T22:44:12.631166Z","stageTimestamp":"2020-10-12T22:44:12.643025Z","annotations":{"authorization.k8s.io/decision":"allow","authorization.k8s.io/reason":"RBAC: allowed by ClusterRoleBinding \"cluster-admins\" of ClusterRole \"cluster-admin\" to Group \"system:cluster-admins\""}}
-```
-</details> 
+    ```
+    cpat@privatevnetbastion:~$ oc adm node-logs jcicost-shr2d-master-1 --path=kube-apiserver/audit.log | grep htlogs  | grep scale
+    
+    {"kind":"Event","apiVersion":"audit.k8s.io/v1","level":"Metadata","auditID":"b603178c-ecbf-4fc4-a9a6-126d2dd9e6c1","stage":"ResponseComplete","requestURI":"/apis/apps/v1/namespaces/htlogs/deployments/htlogsdeployment/scale","verb":"patch","user":{"username":"kube:admin","groups":["system:cluster-admins","system:authenticated"],"extra":{"scopes.authorization.openshift.io":["user:full"]}},"sourceIPs":["172.20.219.4"],"userAgent":"oc/openshift (linux/amd64) kubernetes/b66f2d3","objectRef":{"resource":"deployments","namespace":"htlogs","name":"htlogsdeployment","apiGroup":"apps","apiVersion":"v1","subresource":"scale"},"responseStatus":{"metadata":{},"code":200},"requestReceivedTimestamp":"2020-10-12T22:44:12.631166Z","stageTimestamp":"2020-10-12T22:44:12.643025Z","annotations":{"authorization.k8s.io/decision":"allow","authorization.k8s.io/reason":"RBAC: allowed by ClusterRoleBinding \"cluster-admins\" of ClusterRole \"cluster-admin\" to Group \"system:cluster-admins\""}}
+    ```
+    
+  </details> 
 
 
 - You can also delete the project from the console for example and repeat above steps to verify the user who deleted the project 
